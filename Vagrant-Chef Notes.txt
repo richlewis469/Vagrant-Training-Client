@@ -1,0 +1,13 @@
+gem install knife-solo
+knife solo init . --no-git
+berks cookbook main --skip-git --skip-test-kitchen --no-foodcritic --no-chef-minitest --no-bundler --skip-vagrant
+gem list net-ssh
+gem uninstall net-ssh
+gem install net-ssh -v 3.2.0
+berks install
+vagrant up
+
+** Powershell **
+set VAGRANT_LOG=info
+vagrant up | tee -file vagrant-output.log
+
